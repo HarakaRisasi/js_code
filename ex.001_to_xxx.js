@@ -170,36 +170,75 @@
     myStr += "This is the second sentence."
 
 //ex.027
+    var myName = "Haraka";
+    var myStr = "My name is " + myName + " and I am well!";
+
+//ex.028
+    var someAdjective = "only half the long road in life Human that taked is that way";
+    var myStr = "Learning to code is ";
+    myStr += someAdjective;
+
+//ex.029
+    var lastNameLength = 0;
+    var lastName = "Lovelace";
+
+    lastNameLength = lastName.length;
+
+//ex.030
+    //Bracket notation is a way to get a character at a specific index within a string.
+    var firstLetterOfLastName = "";
+    var lastName = "Lovelace";
+
+    firstLetterOfLastName = lastName[0];
+
+    //the first character at index 0 is "L"
+
+//ex.031
+    /*
+        The only way to change myStr would be to assign it with a new string, like this:
+	var myStr = "Bob";
+	myStr = "Job";
+    */
+
+    var myStr = "Jello World";
+
+    myStr = "Hello World";
+
+//ex.032
+    var lastName = "Lovelace";
+
+    var thirdLetterOfLastName = lastName[2];
+
+//ex.033
+    var lastName = "Lovelace";
+
+    var lastLetterOfLastName = lastName[lastName.length - 1];
+
+//ex.034
+    var lastName = "Lovelace";
+
+    var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+
+//ex.035
+    function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+	var result = myNoun + "," + myAdjective + "," + myVerb + "," + myAdverb;
+	
+	return result;
+    }
+    
+    wordBlanks("dog", "big", "ran", "quickly");
+
+//ex.36
+    var myArray = ["Hello", 13];
+
+//ex.37   
+    	
 
 //ex.107
 
 
 
 
-
-
-
-
-
-
-
-
-var myStr = "This is the start. " + "This is the end.";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var myStr = "This is the start. " + "This is the end.";
 
 
 
