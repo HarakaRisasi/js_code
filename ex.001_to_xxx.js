@@ -45,6 +45,38 @@
     titleCaseOver = 9000;
 
 //ex.007
+    var sum = 10 + 0;
+    sum += 10;
+
+//ex.008
+    var difference = 45 - 33;
+
+//ex.009
+    var product = 8 * 10
+
+//ex.010
+    var quotient = 66 / 33;
+
+//ex.011
+    var myVar = 87;
+    myVar++;
+
+//ex.012
+    var myVar = 87;
+    myVar--;
+
+//ex.013
+    var ourDecimal = 5.7;
+    var myDecimal = 5.7;
+
+//ex.014
+    var product = 2.0 * 2.5;
+
+//ex.015
+    var quotient = 4.4 / 2.0; 
+
+//ex.016
+    
 
 
 
