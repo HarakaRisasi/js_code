@@ -228,10 +228,10 @@
     
     wordBlanks("dog", "big", "ran", "quickly");
 
-//ex.36
+//ex.036
     var myArray = ["Hello", 13];
 
-//ex.37
+//ex.037
     /*
       Nested array(multi-dimensional array).
       One way to think of a multi-dimensional array, is as an array of arrays. 
@@ -249,24 +249,51 @@
       arr[3][0][1];     //[11]      
     */
     
-   var myArray = [["apple", 42], ["sony", 180]];
+    var myArray = [["apple", 42], ["sony", 180]];
 
-   //ex.38
-       var myData = 0;
-       var myArray = [50,60,70];
-       myData = myArray[0];
+//ex.038
+    var myData = 0;
+    var myArray = [50,60,70];
+    myData = myArray[0];
    
-   //ex.39
-       var myArray = [18, 64, 99];
-       myArray[0] = 45;
+//ex.039
+    var myArray = [18, 64, 99];
+    myArray[0] = 45;
    
-   //ex.40
-       
+//ex.040
+    var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
+    var myData = myArray[2][1]; //myData = 8
+
+//ex.041
+    //Manipulate Arrays .push()
+    var myArray = [["John", 23], ["cat", 2]];
+    myArray.push(["dog", 3]);
+    //Return [["John", 23], ["cat", 2], ["dog", 3]];
+
+//ex.042
+    //Manipulate Arrays .pop()
+    var myArray = [["John", 23], ["cat", 2]];
+    var removedFromMyArray = myArray.pop();
+    window.alert(removedFromMyArray); // Returns ["cat", 2]
+    console.log(removedFromMyArray); // Returns ["cat", 2]
+
+//ex.043
+    //Manipulate Arrays .shift()
+    var myArray = [["John", 23], ["dog", 3]];
+    var removedFromMyArray = myArray.shift();
+    // Returns ["John", 23]
+
+//ex.044
+    //Manipulate Arrays .unshift()
+    var myArray = [["John", 23], ["dog", 3]];
+    myArray.shift(); //return ["John", 23];
+
+    myArray.unshift(["Paul", 35]); //return [["Paul", 35],["John", 23]])
+
    
+//ex.072
    
-   //ex.72
-   
-   //ex.107
+//ex.107
     	
 
 //ex.107
