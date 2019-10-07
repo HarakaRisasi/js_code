@@ -1,14 +1,13 @@
 //ex.001
-    /*
-       Seven different data types is JS
-       1.undefined
-       2.null
-       3.boolean
-       4.string
-       5.symbol
-       6.number
-       7.object
-     */
+    /*Seven different data types is JS
+      1.undefined
+      2.null
+      3.boolean
+      4.string
+      5.symbol
+      6.number
+      7.object
+    */
 
 //ex.002
     var ourName;
@@ -76,17 +75,16 @@
     var quotient = 4.4 / 2.0; 
 
 //ex.016
-    /*
-    Reminder:
+    /*Reminder:
         5 % 2 = 1 
-	because
-	5 / 2 = 2
-	2 * 2 = 4
-	5 - 4 = 1
-    Note
-    The remainder operator is sometimes incorrectly referred to 
-    as the "modulus" operator. It is very similar to modulus, 
-    but does not work properly with negative numbers.
+      because
+        5 / 2 = 2
+        2 * 2 = 4
+        5 - 4 = 1
+      Note
+      The remainder operator is sometimes incorrectly referred to 
+      as the "modulus" operator. It is very similar to modulus, 
+      but does not work properly with negative numbers.
     */
 
     var reminder;
@@ -139,23 +137,21 @@
     var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
 
 //ex.023
-    /*
-       doubleQuoteStr = "This is a string"; 
-       singleQuoteStr = 'This is also a string';
+    /*doubleQuoteStr = "This is a string"; 
+      singleQuoteStr = 'This is also a string';
 
-       conversation = 'Finn exclaims to Jake, "Algebraic!"';
+      conversation = 'Finn exclaims to Jake, "Algebraic!"';
 
-       goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
-       badStr = 'Finn responds, "Let's go!"'; // Throws an error
+      goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
+      badStr = 'Finn responds, "Let's go!"'; // Throws an error
     */
 
     var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 
 //ex.024
-    /*
-	FirstLine
+    /*FirstLine
 	    \SecondLine
-        ThirdLine
+      ThirdLine
     */
     var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
 
@@ -194,10 +190,9 @@
     //the first character at index 0 is "L"
 
 //ex.031
-    /*
-        The only way to change myStr would be to assign it with a new string, like this:
-	var myStr = "Bob";
-	myStr = "Job";
+    /*The only way to change myStr would be to assign it with a new string, like this:
+	    var myStr = "Bob";
+	    myStr = "Job";
     */
 
     var myStr = "Jello World";
@@ -232,8 +227,7 @@
     var myArray = ["Hello", 13];
 
 //ex.037
-    /*
-      Nested array(multi-dimensional array).
+    /*Nested array(multi-dimensional array).
       One way to think of a multi-dimensional array, is as an array of arrays. 
       When you use brackets to access your array, the first set of brackets 
       refers to the entries in the outer-most (the first level) array, and each 
@@ -347,25 +341,74 @@
     myOutfit();
 
 //ex.050
+    /*We can pass values into a function with arguments. 
+      You can use a return statement to send a value back out of a function.
+
+        function plusThree(num) {
+            return num + 3;
+        }
+        
+        var answer = plusThree(5); // 8
+    */
+
+   function timesFive(num){
+    return num * 5;
+    }
     
+    console.log(timesFive(5));
     
-   
+//ex.51
+    //undefined return
+
+    var sum = 0;
+    function addFive(num){
+        sum += 5;
+        //without return;
+    }
+    console.log(addFive()); //return undefined
+
+//ex.52
+    var processed = 0;
+    
+    function processArg(num){
+        return (num + 3) / 5;
+    }
+    processed = processArg(7);
+    
+    console.log(processed);
+
+//ex.53
+    function nextInLine(arr, item){
+        //console.log("before" + JSON.stringify(arr));
+        arr.push(item);
+        //console.log("after" + JSON.stringify(arr));            
+        var temp = arr.shift();
+        return temp; 
+    }
+    
+    var testArr = [1,2,3,4,5];
+    /*Метод JSON.stringify(student) берёт объект и преобразует его в строку.
+      Полученная строка json называется JSON-форматированным или сериализованным объектом.
+      Before: [1,2,3,4,5]
+      After: [1,2,3,4,10]
+    */
+    console.log("Before: " + JSON.stringify(testArr));
+    
+    console.log(nextInLine([], 5));             //return num
+    console.log(nextInLine([], 1));             //return 1
+    console.log(nextInLine([2], 1));            //return 2
+    console.log(nextInLine([5,6,7,8,9], 1));    //return 5
+    console.log(nextInLine(testArr, 10));       //arr[4] will be equal 10
+    
+    console.log("After: " + JSON.stringify(testArr));
+    /*Add number at the end of the array. So I use .push()
+      Remove the first element. .shift()
+      Return the element was removed.
+    */
+
 //ex.072
    
 //ex.107
     	
 
 //ex.107
-
-
-
-
-
-
-
-
-
-
-
-
-
