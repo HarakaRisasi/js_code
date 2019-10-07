@@ -231,7 +231,42 @@
 //ex.36
     var myArray = ["Hello", 13];
 
-//ex.37   
+//ex.37
+    /*
+      Nested array(multi-dimensional array).
+      One way to think of a multi-dimensional array, is as an array of arrays. 
+      When you use brackets to access your array, the first set of brackets 
+      refers to the entries in the outer-most (the first level) array, and each 
+      additional pair of brackets refers to the next level of entries inside.
+
+      input:
+      var arr = [1,2,3],[4,5,6],[7,8,9],[[10,11,12], 14]]
+
+      output:
+      arr[3];           //[[10,11,12],14]
+      arr[3][0];        //[10,11,12]
+      arr[3][1];        //[14]
+      arr[3][0][1];     //[11]      
+    */
+    
+   var myArray = [["apple", 42], ["sony", 180]];
+
+   //ex.38
+       var myData = 0;
+       var myArray = [50,60,70];
+       myData = myArray[0];
+   
+   //ex.39
+       var myArray = [18, 64, 99];
+       myArray[0] = 45;
+   
+   //ex.40
+       
+   
+   
+   //ex.72
+   
+   //ex.107
     	
 
 //ex.107
