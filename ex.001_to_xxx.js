@@ -290,6 +290,65 @@
 
     myArray.unshift(["Paul", 35]); //return [["Paul", 35],["John", 23]])
 
+//ex.045
+    //There should be at least 5 sub-arrays in the list.
+    var myList = [["a",1],["b",2],["c",3],["d",4],["e",5]];
+
+//ex.046
+    /*function - is a reusable parts of code
+        function functionName() {
+            console.log("Hello World");
+        }
+        functionName(); //call function
+    */
+    
+   function reusableFunction(){
+        console.log("Hi World")
+    }
+    
+    reusableFunction();
+
+//ex.046
+    /*argument - it's actual values thet are input("or passed") into function
+        function testFun(param1, param2) {
+            console.log(param1, param2);
+        }
+
+        testFun("Hello", "World");}
+    */
+    
+   function functionWithArgs(a, b){
+        console.log(a + b);
+    }
+
+    functionWithArgs(1, 2);
+
+//ex.047
+    var myGlobal = 10;
+    var oopsGlobal;
+    
+    function fun1(){
+        oopsGlobal = myGlobal / 2;
+        console.log(oopsGlobal);
+    }
+    
+    fun1();
+
+//ex.048
+    function myLocalScope(){
+        var myVar;
+    }
+
+//ex.049
+    function myOutfit(){
+        var outerWear = "sweater";
+    console.log(outerWear);
+    }
+    myOutfit();
+
+//ex.050
+    
+    
    
 //ex.072
    
