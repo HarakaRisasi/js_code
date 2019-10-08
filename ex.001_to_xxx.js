@@ -357,7 +357,7 @@
     
     console.log(timesFive(5));
     
-//ex.51
+//ex.051
     //undefined return
 
     var sum = 0;
@@ -367,7 +367,7 @@
     }
     console.log(addFive()); //return undefined
 
-//ex.52
+//ex.052
     var processed = 0;
     
     function processArg(num){
@@ -377,7 +377,7 @@
     
     console.log(processed);
 
-//ex.53
+//ex.053
     function nextInLine(arr, item){
         //console.log("before" + JSON.stringify(arr));
         arr.push(item);
@@ -406,8 +406,164 @@
       Return the element was removed.
     */
 
-//ex.072
-   
+//ex.054
+    function welcomeToBooleans() {
+        return true;
+    }
+    console.log(welcomeToBooleans())
+
+//ex.055
+    function trueOrFalse(wasThatTrue){
+        if(wasThatTrue){
+            return "Yes, that was true";
+        }
+        return "No, that was false";
+    }
+    
+    console.log(trueOrFalse(1));
+
+//ex.056
+    /*"Type Coercion".
+      the equality operator(==), which attempts to convert 
+      both values being compared to a common type
+      1 == 1 // true
+      1 == 2 // false
+      1 == '1' // true
+      "3" == 3 // true
+    */
+    
+    function testEqual(val){
+        if(val == 12){
+            return "Equal";
+        }
+        return "Not Equal";
+    }
+    console.log(testEqual(10));   //Not Equal
+    console.log(testEqual(12));   //Equal
+    console.log(testEqual("12")); //Equal
+
+//ex.057
+    /*Comparison with the Strict Equality Operator(===).
+      The strict equality operator does not perform a type conversion.
+      3 === 3 // true
+      3 === '3' // false
+    */
+    
+    function testStrict(val) {
+        if (val === 7) {
+            return "Equal";
+        }
+        return "Not Equal";
+    }
+    
+    // Change this value to test
+    testStrict(10);
+    
+    console.log(testEqual(10));   //Not Equal
+    console.log(testEqual(7));   //Equal
+    console.log(testEqual("7")); //Not Equal
+
+//ex.058
+    function compareEquality(a, b) {
+        if (a === b) { 
+            return "Equal";
+        }
+        return "Not Equal";
+    }
+    
+    compareEquality(10, "10");
+
+//ex.059
+    /*3 !== 3 // false
+      3 !== '3' // true
+      4 !== 3 // true
+    */
+    function testNotEqual(val) {
+        if (val != 99) { 
+            return "Not Equal";
+        }
+        return "Equal";
+    }
+
+//ex.060
+    function testStrictNotEqual(val) {
+        if (val !== 17) {
+            return "Not Equal";
+        }
+        return "Equal";
+    }
+
+//ex.061
+    function testGreaterThan(val) {
+        if (val > 100) {  
+            return "Over 100";
+        }
+    
+        if (val > 10) {  
+            return "Over 10";
+        }
+  
+        return "10 or Under";
+    }
+
+//ex.062
+    function testGreaterOrEqual(val) {
+        if (val >= 20) {  
+            return "20 or Over";
+        }
+    
+        if (val >= 10) {  
+            return "10 or Over";
+        }
+  
+        return "Less than 10";
+    }
+
+//ex.063
+    function testLessThan(val) {
+        if (val < 25) {  
+            return "Under 25";
+        }
+    
+        if (val < 55) {  
+            return "Under 55";
+        }
+  
+        return "55 or Over";
+    }
+
+//ex.064
+    function testLessOrEqual(val) {
+        if (val <= 12) {  
+            return "Smaller Than or Equal to 12";
+        }
+    
+        if (val <= 24) {  
+            return "Smaller Than or Equal to 24";
+        }
+  
+        return "More Than 24";
+    }
+
+//ex.065
+    function testLogicalAnd(val) {
+        if (val <= 50 && val >= 25) {
+            return "Yes";    
+        }
+        
+        return "No";
+    }
+
+//ex.066
+    function testLogicalOr(val) {
+        if (val > 20 || val < 10) {
+            return "Outside";
+        }    
+        return "Inside";
+    }
+
+//ex.067
+
 //ex.107
     	
 
