@@ -892,6 +892,97 @@
     console.log(phoneticLookup("charlie"));
 
 //ex.087
+    //Testing Objects for Properties
+    var myObj = {
+        gift: "pony",
+        pet: "kitten",
+        bed: "sleigh"
+    };
     
+    function checkObj(checkProp) {
+        var check = myObj.hasOwnProperty(checkProp)
+        if(check){
+        return myObj[checkProp]
+        }
+        return "Not Found";
+    }
+    
+    console.log(checkObj("gift"));
+
+//ex.088
+    /*Sometimes you may want to store data in a flexible Data Structure. 
+      A JavaScript object is one way to handle flexible data. 
+      They allow for arbitrary 
+      combinations of strings, numbers, booleans, arrays, functions, and objects.
+    */
+    //Manipulating Complex Objects
+    //To store data in a flexible Data Structure
+    //JavaScript Object Notation or JSON is a related data interchange format used to store data.
+    var myMusic = [
+        {
+        "artist": "Billy Joel",
+        "title": "Piano Man",
+        "release_year": 1973,
+        "formats": [ 
+            "CD",
+            "8T",
+            "LP"
+        ],
+        "gold": true
+        }, // comma after every object in the array
+    
+        {
+        "artist": "Daft Punk",
+        "title": "Homework",
+        "release_year": 1997,
+        "formats": [ 
+            "CD",
+            "Cassette",
+            "LP"
+        ],
+        "gold": true
+        }
+    ];
+
+//ex.089
+    var myStorage = {
+        "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+        }
+    };
+    
+    var gloveBoxContents = myStorage.car.inside["glove box"];
+    console.log(gloveBoxContents);
+
+//ex.090
+    var myPlants = [
+        { 
+        type: "flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+        },
+        {
+        type: "trees",
+        list: [
+            "fir",
+            "pine",
+            "birch"
+        ]
+        }  
+    ];
+    
+    var secondTree = myPlants[1].list[1];
+    console.log(secondTree);
+
+//ex.091
 
 //ex.106
