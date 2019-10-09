@@ -843,5 +843,55 @@
     console.log(myDog.name);
 
 //ex.084
+//Add New Properties to a JavaScript Object
+    var myDog = {
+        "name": "Happy Coder",
+        "legs": 4,
+        "tails": 1,
+        "friends": ["freeCodeCamp Campers"]
+    };
+    
+    myDog["bark"] = "bow-wow";
+    
+    console.log(myDog);
+
+//ex.085
+    //Delete Properties from a JavaScript Object
+    var myDog = {
+        "name": "Happy Coder",
+        "legs": 4,
+        "tails": 1,
+        "friends": ["freeCodeCamp Campers"],
+        "bark": "woof"
+    };
+    
+    delete myDog["tails"];
+    
+    console.log(myDog);
+
+//ex.086
+    //Using Objects for Lookups
+    function phoneticLookup(val) {
+        var result = "";
+    
+        // Only change code below this line
+        var lookup = {
+        "alpha": "Adams",
+        "bravo": "Boston",
+        "charlie": "Chicago",
+        "delta": "Denver",
+        "echo": "Easy",
+        "foxtrot": "Frank"
+        };
+    
+        result = lookup[val];
+    
+        return result;
+    }
+    
+    console.log(phoneticLookup("charlie"));
+
+//ex.087
+    
 
 //ex.106
