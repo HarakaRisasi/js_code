@@ -902,7 +902,7 @@
     function checkObj(checkProp) {
         var check = myObj.hasOwnProperty(checkProp)
         if(check){
-        return myObj[checkProp]
+        return myObj[checkProp] //bracket notation when accessing object properties with variables.
         }
         return "Not Found";
     }
@@ -984,5 +984,60 @@
     console.log(secondTree);
 
 //ex.091
+    var collection = {
+        "2548": {
+        "album": "Slippery When Wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let it Rock",
+            "You Give Love a Bad Name"
+        ]
+        },
+        "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "1999",
+            "Littele Red Corvette"
+        ]
+        },
+        "1245": {
+        "artist": "Robert Palmer",
+        "tracks":[ ]
+        },
+        "5439": {
+        "album": "ABBA Gold"
+        //  "artist":
+        //  "tracks": [ ]    
+        }
+    };
+  
+    var collectionCopy = JSON.parse(JSON.stringify(collection));  
+    function updateRecords(id, prop, value) {
+    
+        if(value === "") delete collection[id][prop];
+        else if(prop === "tracks") {
+            collection[id][prop] = collection[id][prop] || [];
+            collection[id][prop].push(value);
+        } else {
+            collection[id][prop] = value;
+        }
+    
+        return collection;
+    /*
+    collection[id][prop] = value;
+    collection[id]["tracks"] = [];
+    collection[id].tracks.push(value);
+    delete collection[2548].artist;
+    delete collection[2548].tracks;
+    collection[2468].tracks.unshift(value);
+    */
+    }
+  
+    updateRecords(2468, "tracks", "Free");
+    console.log(collection);
+
+//ex.092
+    
 
 //ex.106
