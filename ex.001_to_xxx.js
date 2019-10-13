@@ -1038,6 +1038,17 @@
     console.log(collection);
 
 //ex.092
-    
+    var myArray = [];
+    var i = 0;
+
+    while(i < 5){
+        myArray[i] = i;
+        i++;
+    }
+
+    console.log(myArray)
+
+//ex.093
+
 
 //ex.106
