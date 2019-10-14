@@ -1049,6 +1049,47 @@
     console.log(myArray)
 
 //ex.093
+    //for ([initialization]; [condition]; [final-expression])
+    function iterate(){
+            var myArray = [];
+            for(var i = 1; i < 6; i++){
+            myArray.push(i);
+            //ourArray[i] = i;
+        }
+    
+        return myArray;
+    }
+    
+    console.log(iterate());
 
+//ex.094
+    function iterate(){
+        var myArray = [];
+        for(var i = 1; i < 10; i += 2){
+        myArray.push(i);
+        //ourArray[i] = i;
+        }
+    
+        return myArray;
+    }
+    
+    console.log(iterate());
+
+//ex.095
+    function iterate(){
+        var myArray = [];
+        for(var i = 9; i > 0; i -= 2){
+            myArray.push(i);
+            //ourArray[i] = i;
+        }
+    
+        return myArray;
+    }
+    
+    console.log(iterate());
+
+//ex.096
+
+    
 
 //ex.106
