@@ -1253,6 +1253,13 @@ console.log(lookUpProfile("Bob", "")); //No such contact
 console.log(lookUpProfile("Akira", "address")); //No such property
 
 //ex.100
+//Math.random() function that generates a random decimal number between 0 (inclusive) and not quite up to 1
+function randomFraction() {
+    return Math.random();
+}
+console.log(randomFraction());
 
+//ex.101
+    
 
 //ex.106
