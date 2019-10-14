@@ -1260,6 +1260,14 @@ function randomFraction() {
 console.log(randomFraction());
 
 //ex.101
-    
+// Math.floor() to round the number down to its nearest whole number.
+//20 - is a number that mean that random number was range between 0 and 19.
+function randomFraction() {
+    return Math.floor(Math.random() * 20); // 8 or 10 or....
+}
+console.log(randomFraction());
+
+//ex.102
+
 
 //ex.106
