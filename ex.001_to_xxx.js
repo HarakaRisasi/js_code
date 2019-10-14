@@ -1090,6 +1090,49 @@
 
 //ex.096
 
+    var myArr = [2, 3, 4, 5, 6];
+    var total = 0;
+
+    function iterate(){
+        for(var i = 0; i < myArr.length; i++){
+            total += myArr[i];    
+        }
+        return total;
+    }
+
+    console.log(iterate());
+
+//ex.097
+    /*
+    var arr = [[1, 2, "a"], [3, 4], [11, 44, 5, 6]];
+
+    for(var i = 0; i < arr.length; i++){
+        for(var j = 0; j < arr[i].length; j++){
+            console.log(arr[i][j]);
+        
+    }
+        console.log(arr.length, "&&",arr[i].length);
+    }
+
+    console.log(arr.length);
+    */
+
+    function multiplyAll(arr){
+        var product = 1;
     
+        for(var i = 0; i < arr.length; i++){
+            for(var j = 0; j < arr[i].length; j++){
+                product *= arr[i][j];
+            }
+        }
+    
+        return product;
+    }
+    
+    console.log(multiplyAll([[1, 2], [3, 4], [5, 6, 7]]));
+
+//ex.098
+
+
 
 //ex.106
