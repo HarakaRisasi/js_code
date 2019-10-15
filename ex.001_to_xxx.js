@@ -1263,11 +1263,31 @@ console.log(randomFraction());
 // Math.floor() to round the number down to its nearest whole number.
 //20 - is a number that mean that random number was range between 0 and 19.
 function randomFraction() {
-    return Math.floor(Math.random() * 20); // 8 or 10 or....
+    return Math.floor(Math.random() * 20); // 0 or 19 or....
 }
 console.log(randomFraction());
 
 //ex.102
+function randomRange(myMax, myMin) {
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
 
+console.log(randomRange(9, 1));
+
+//ex.103
+/*The parseInt() function parses a string and returns an integer.
+var a = parseInt("007");
+var b = parseInt("Hello");
+
+console.log(a); //7
+console.log(b); //NaN
+*/
+function convertToInteger(str) {
+    return parseInt(str);
+}
+
+console.log(convertToInteger("56"));   
+
+//ex.104
 
 //ex.106
