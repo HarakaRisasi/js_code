@@ -34,6 +34,61 @@ function catTalk() {
 console.log(catTalk());
 
 //ex.002
+/*
+Compare Scopes of the var and let Keywords
+ When you declare a variable with the let keyword inside a block, statement, or expression, 
+ its scope is limited to that block, statement, or expression.
+*/
+/*
+var printNumTwo;
+//i - is declared globally.
+for(var i = 0; i < 5; i++){
+  if(i === 2){
+    printNumTwo = function(){
+      return i;
+    };
+  }
+}
+console.log(printNumTwo()); //return 3
 
+
+let printNumTwo;
+//let i - is declared locally
+//let i - declared only for loop statement.
+for (let i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function() {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo()); //return 2
+*/
+function checkScope() {
+    let i = "function scope";
+    if (false) {
+        i = "block scope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+};
+  
+console.log(checkScope());
+
+//ex.003
+//You should always name variables you don't want to reassign using the const keyword.
+//when naming constants is to use all uppercase letters,with words separated by an underscore.
+function printManyTimes(str) {
+
+    const SENTENCE = str + " is cool!";
+    for (let i = 0; i < str.length; i += 2) {
+        console.log(SENTENCE);
+    }
+}
+
+console.log(printManyTimes("freeCodeCamp"));   
+
+//ex.004
 
 //ex.026
