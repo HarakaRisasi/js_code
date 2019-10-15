@@ -1,45 +1,16 @@
-var collection = {
-  "2548": {
-    "album": "Slippery When Wet",
-    "artist": "Bon Jovi",
-    "tracks": [
-      "Let it Rock",
-      "You Give Love a Bad Name"
-    ]
-  },
-  "2468": {
-    "album": "1999",
-    "artist": "Prince",
-    "tracks": [
-      "1999",
-      "Littele Red Corvette"
-    ]
-  },
-  "1245": {
-    "artist": "Robert Palmer",
-    "tracks":[ ]
-  },
-  "5439": {
-    "album": "ABBA Gold"
-//  "artist":
-//  "tracks": [ ]    
-  }
-};
+/*Use Multiple Conditional (Ternary) Operators
 
-var collectionCopy = JSON.parse(JSON.stringify(collection));
-
-function updateRecords(id, prop, value) {
-
-collection[id][prop] = value;
-collection[id]["tracks"] = [];
-collection[id].tracks.push(value);
-delete collection[2548].artist;
-delete collection[2548].tracks;
-collection[2468].tracks.push(value);
-//console.log(collection[1245]);
-console.log(collection[2468].tracks);
-
+function checkSign(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
 }
 
-updateRecords(5439, "artist", "ABBA");
+console.log(checkSign(10, 9)); //a is greater
+console.log(checkSign(10, 10)); //a and b are equal
+console.log(checkSign(10, 11)); //b is greater
+*/
 
+function checkSign(num) {
+  return (num === 0) ? "zero" : (num > 0) ? "positive" : "negative";
+}
+
+console.log(checkSign(10));
