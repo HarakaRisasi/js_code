@@ -1289,5 +1289,52 @@ function convertToInteger(str) {
 console.log(convertToInteger("56"));   
 
 //ex.104
+/*Use the parseInt Function with a Radix
+Radix - int. number in range between 2 and 36
+"0xF", 16 //15
+"F", 16  //15
+"17", 8 //15
+"10011", 2 //19
+"-F", 16 //-15
+"-1011", 2 //-11
+"0e0", 16 //224
+----------------------------------------------
+function convertToInteger(str, radi) {
+
+  return parseInt(str, radi);
+  
+}
+console.log(convertToInteger("0e0", 16));
+*/
+function convertToInteger(str){
+    return parseInt(str, 2);
+}
+  
+console.log("10011");
+
+//ex.105
+//The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
+//syntax: condition ? statement-if-true : statement-if-false;
+function checkEqual(a, b) {
+    //return a > b ? "\"a\" Greater" : "\"b\"Greater";
+    return a == b ? true : false;
+}
+
+console.log(checkEqual(4, 2));
 
 //ex.106
+/*Use Multiple Conditional (Ternary) Operators
+
+function checkSign(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+
+console.log(checkSign(10, 9)); //a is greater
+console.log(checkSign(10, 10)); //a and b are equal
+console.log(checkSign(10, 11)); //b is greater
+*/
+function checkSign(num) {
+    return (num === 0) ? "zero" : (num > 0) ? "positive" : "negative";
+}
+
+console.log(checkSign(10));
