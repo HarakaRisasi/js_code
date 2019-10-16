@@ -98,11 +98,46 @@ const s = [5, 6, 7];
 s[2] = 45;
 console.log(s); //[5, 6, 45]
 */
-const s = [5, 7, 2];
+const S = [5, 7, 2];
 
 function editInPlace() {
-    s[0] = 2, s[1] = 5, s[2] = 7;
-    return s;
+    S[0] = 2, S[1] = 5, S[2] = 7;
+    return S;
 }
 console.log(editInPlace());
+
+//ex.005
+/*
+Object.freeze - prevent object mutation.
+You can no longer add, update, or delete properties from it.
+-------------------------------------------
+let obj = {
+  name: "Haraka",
+  review: "Awesome"
+};
+
+Object.freeze(obj);
+
+obj.name = "hello";
+obj.newProp = "Test";
+
+//with Object.freeze(obj);
+console.log(obj); //{name: "Haraka", review: "Awesome"}
+//without Object.freeze(obj);
+console.log(obj); //{name: "hello", review: "Awesome", newProp: "Test"}
+-------------------------------------------
+*/
+function freezeObj() {
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+
+    Object.freeze(MATH_CONSTANTS);
+    return MATH_CONSTANTS.PI;
+}
+
+console.log(freezeObj());
+
+//ex.006
+
 //ex.026
