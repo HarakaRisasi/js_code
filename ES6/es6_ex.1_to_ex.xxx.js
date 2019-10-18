@@ -127,6 +127,10 @@ console.log(obj); //{name: "Haraka", review: "Awesome"}
 console.log(obj); //{name: "hello", review: "Awesome", newProp: "Test"}
 -------------------------------------------
 */
+
+/*
+!!!"try..catch"
+*/
 function freezeObj() {
     const MATH_CONSTANTS = {
         PI: 3.14
@@ -139,5 +143,46 @@ function freezeObj() {
 console.log(freezeObj());
 
 //ex.006
+/*
+arrow function syntax:
+-------------------------------
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+-------------------------------
+When there is no function body, and only a return value, arrow function syntax allows 
+you to omit the keyword return as well as the brackets surrounding the code.
+-------------------------------
+const myFunc = () => "value"
+-------------------------------
+This code will still return value by default.
+
+instead
+-------------------------------
+const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+}
+-------------------------------
+*/
+const magic = () => new Date();
+console.log(magic);
+
+//ex.007
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+//Метод concat() объединяет текст из двух или более строк и возвращает новую строку.
+console.log(myConcat([1, 2], [3, 4, 5]));
+
+//ex.008
+//Setting default arguments with arrow functions.
+const increment = (number = 1, value = 1) => number + value;
+//set default arguments if both or one of them not will be pass on a function
+
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns 6
+
+//ex.009
+
 
 //ex.026
