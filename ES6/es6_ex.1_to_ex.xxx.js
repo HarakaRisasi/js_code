@@ -183,6 +183,18 @@ console.log(increment(5, 2)); // returns 7
 console.log(increment(5)); // returns 6
 
 //ex.009
-
+/*
+const arg = (...arguments) => "You have " + arguments.length + " arguments.";
+    ... — оператор расширения
+    ----------------------------------------------------
+    let mid = [3, 4];
+    let betta = [1, 2, ...mid, 5, 6]
+    console.log(betta); //return [1, 2, 3, 4, 5, 6]
+    ----------------------------------------------------
+console.log(arg("0", 1, [2], null)); //return "You have 4 arguments."
+console.log(arg("string", null, [1, 2, 3, 4], {}, 1231)); //return "You have 5 arguments."
+*/
+const sum = (...args) => args.reduce((a, b) => a + b, 0);
+console.log(sum(1, 2, 3));
 
 //ex.026
