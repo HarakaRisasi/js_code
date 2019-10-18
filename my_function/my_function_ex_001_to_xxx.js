@@ -27,4 +27,8 @@ For C++ it would depend on whether or not you're in a class.
 */
 
 //001_apply.js
-*/
+
+//func.call(context, …args) - for passing content
+function sayHi(){
+    alert (this.name);
+}
