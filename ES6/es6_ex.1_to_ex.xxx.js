@@ -195,6 +195,6 @@ console.log(arg("0", 1, [2], null)); //return "You have 4 arguments."
 console.log(arg("string", null, [1, 2, 3, 4], {}, 1231)); //return "You have 5 arguments."
 */
 const sum = (...args) => args.reduce((a, b) => a + b, 0);
-console.log(sum(1, 2, 3));
+console.log(sum(1, 2, 3)); //return 6;
 
 //ex.026
