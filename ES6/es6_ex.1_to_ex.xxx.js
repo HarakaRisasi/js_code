@@ -290,5 +290,96 @@ console.log(today); //return 77
 console.log(tomorrow); //return 80
 
 //ex.012
+/*
+Use Destructuring Assignment to Assign Variables from Objects
+--------------------------------------------
+const user = {
+    name: "Haraka",
+    age: 29
+};
+
+//given new variable names in the assignment
+const {name: userName, age: userAge} = user;
+
+console.log(userAge); //return 29;
+--------------------------------------------
+*/
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+const {
+  today: highToday,
+  tomorrow: highTomorrow
+} = HIGH_TEMPERATURES;
+
+// console.log(yesterday) //return not defined
+console.log(highToday); //return 77
+console.log(highTomorrow); //return 80
+
+//ex.013
+/*
+Here's how to extract the values of object properties and assign them to variables with the same name:
+--------------------------------
+const user = {
+    Haraka: {
+        age: 29,
+        message: "HelloWorld!"
+    }
+};
+--------------------------------
+Assign an object properties' values to variables with different names:
+--------------------------------
+const {
+    Haraka: {
+        age: myNewAge,
+        message: myNewMessage
+    }
+} = user;
+--------------------------------
+--------------------------------
+const har = {
+    myNewAge,
+    myNewMessage
+};
+
+console.log(har); //return {myNewAge: 29, myNewMessage: "HelloWorld!"}
+--------------------------------
+*/
+const LOCAL_FORECAST = {
+  yesterday: {
+      low: 61,
+      high: 75
+  },
+  today: {
+      low: 64,
+      high: 77
+  },
+  tomorrow: {
+      low: 68,
+      high: 80
+  }
+};
+
+const {
+  yesterday: {
+      low: lowYesterday,
+      high: highYesterday
+  },
+  today: {
+      low: lowToday,
+      high: highToday
+  },
+  tomorrow: {
+      low: lowTomorrow,
+      high: highTomorrow
+  }
+} = LOCAL_FORECAST;
+
+console.log(lowToday);
+console.log(highToday);
+
+//ex.014
 
 //ex.026
