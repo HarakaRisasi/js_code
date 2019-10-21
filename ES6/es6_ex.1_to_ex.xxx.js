@@ -381,5 +381,76 @@ console.log(lowToday);
 console.log(highToday);
 
 //ex.014
+/*
+Use Destructuring Assignment to Assign Variables from Arrays
+------------------------------------------
+const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); //return 1 2 5
+------------------------------------------
+in C-lang. i'm do next:
+------------------------------------------
+let a = 1;
+let b = 2;
+let temp;
+
+temp = a;
+a = b;
+b = temp;
+
+a; // => 2
+b; // => 1
+------------------------------------------
+*/
+//swap the values of a and b 
+let a = 8,
+    b = 6;
+
+[a, b] = [b, a];
+
+console.log(a);
+console.log(b);
+
+//ex.015
+/*
+_Rest parameters
+
+-Destructuring array - массив не имеющий четкой структуры(динамический массив).
+
+-Синтаксис оставшихся параметров функции позволяет 
+представлять неограниченное множество аргументов в виде массива.
+
+-Если последний именованный аргумент функции имеет префикс ..., 
+он автоматически становится массивом с элементами от 0 до theArgs.length 
+в соответствии с актуальным количеством аргументов, переданных в функцию.
+----------------------------
+function(a, b, ...theArgs) {
+  // ...
+}
+----------------------------
+----------------------------
+const sum = (...args) => args.reduce((previous, current) => previous + current);
+
+console.log(sum(1, 2, 3)); //return 6;
+----------------------------
+----------------------------
+const [a, b, c, ...args] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+console.log(a, b); //=> 1 2
+console.log(args); //=> [4, 5, 6, 7, 8, 9, 0]
+----------------------------
+*/
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function removeFirstTwo(list) {
+    const [a, b, ...arr] = list;
+    return arr;
+}
+
+const arr = removeFirstTwo(source);
+
+console.log(arr); //=> [3, 4, 5, 6, 7, 8, 9, 10]
+console.log(source); //=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+//ex.016
 
 //ex.026
