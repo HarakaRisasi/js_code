@@ -197,4 +197,98 @@ console.log(arg("string", null, [1, 2, 3, 4], {}, 1231)); //return "You have 5 a
 const sum = (...args) => args.reduce((a, b) => a + b, 0);
 console.log(sum(1, 2, 3)); //return 6;
 
+//ex.010
+/*
+"_es6"/ 
+--------------------------------
+let b = [1, 3, 5, 6];
+let a = [...b] - assigned to "a" all values "b";
+--------------------------------
+--------------------------------
+function max(...value) { -- it's all arguments that w'll be give in a function
+  // ...
+}
+max(1,2,3)
+--------------------------------
+
+--------------------------------
+let arr = [1, 3, 5, 3];
+const min_max = Math.max(...arr);
+
+console.log(min_max); //return 5
+--------------------------------
+*/
+const ARR1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2 = [...ARR1];
+
+console.log(arr2[2]); //return MAR;
+
+//ex.011
+/*
+Use Destructuring Assignment
+Синтаксис деструктурирующего присваивания в выражениях 
+JavaScript позволяет извлекать данные из массивов или объектов при помощи синтаксиса.
+
+Одной из ключевых возможностей использования деструктурирующего присваивания 
+является чтение структуры данных одним оператором, хотя помимо 
+этого вы можете найти множество других применений в приведённых ниже примерах.
+----------------------------------------
+//"_es5"/
+const user = {
+    name : "Haraka",
+    age : 29
+};
+const new_name = user.name;
+const new_age = user.age;
+
+console.log(new_name); //return Haraka
+console.log(new_age); //return 29
+----------------------------------------
+----------------------------------------
+var foo = ["one", "two", "three"];
+
+// без деструктурирования
+var one   = foo[0];
+var two   = foo[1];
+var three = foo[2];
+
+// с деструктурированием
+var [one, two, three] = foo;
+----------------------------------------
+Возврат нескольких значений
+----------------------------------------
+function f() {
+  return [1, 2];
+}
+----------------------------------------
+----------------------------------------
+//"_es6"/
+const user = {
+    name: "Haraka",
+    age: 29
+};
+const {name, age} = user;
+
+let any = age;
+
+console.log(any);
+----------------------------------------
+*/
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const {
+  today,
+  tomorrow
+} = HIGH_TEMPERATURES;
+
+console.log(yesterday) //return not defined
+console.log(today); //return 77
+console.log(tomorrow); //return 80
+
+//ex.012
+
 //ex.026
