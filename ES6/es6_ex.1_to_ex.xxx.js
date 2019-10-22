@@ -645,5 +645,74 @@ const createPerson = (name, age, gender) => {
 console.log(createPerson("Zodiac Hasbro", 56, "male")); //=>{name: "Zodiac Hasbro", age: 56, gender: "male"}
 
 //ex.019
+/*
+Declarative Functions with ES6
 
+Императивный стиль:
+-------------------------------------------------------
+function double (arr) {
+  let results = [];
+  for (let i = 0; i < arr.length; i++){
+    results.push(arr[i] * 2);
+  }
+  return results;
+}
+-------------------------------------------------------
+Декларативный стиль:
+-------------------------------------------------------
+function double (arr) {
+  return arr.map((item) => item * 2);
+}
+-------------------------------------------------------
+
+Use Destructuring Assignment
+-------------------------------------------------------
+const person = {
+    name: "Haraka",
+    sayHello(){
+        return `Hello! My name is ${name}.`;
+    }
+};
+const {name, sayHello} = person;
+
+console.log(sayHello()); //=> Hello! My name is Haraka.
+-------------------------------------------------------
+Use method .this
+-------------------------------------------------------
+const person = {
+    name: "Haraka",
+    sayHello() {
+        return `Hello! My name is ${this.name}.`;
+    }
+};
+
+console.log(person.sayHello()); //=> Hello! My name is Haraka.
+-------------------------------------------------------
+*/
+
+/*
+-------------------------------------------------------
+// change code below this line
+const bicycle = {
+  gear: 2,
+  setGear: function(newGear) {
+    this.gear = newGear;
+  }
+};
+// change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);
+-------------------------------------------------------
+*/
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+      this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+//ex.20
+  
 //ex.026
