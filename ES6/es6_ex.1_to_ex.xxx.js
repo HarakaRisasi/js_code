@@ -486,5 +486,56 @@ console.log(stats);
 console.log(half(stats));
 
 //ex.017
+/*
+Create Strings using Template Literals
+
+Шаблонными литералами называются строковые литералы, допускающие использование выражений внутри. 
+С ними вы можете использовать многострочные литералы и строковую интерполяцию. 
+В спецификациях до ES2015 они назывались "шаблонными строками".
+
+Литерал — запись в исходном коде компьютерной программы, представляющая собой фиксированное значение. 
+Литералами также называют представление значения некоторого типа данных.
+В программировании литерал - это константа которая не имеет имени. 
+
+$ — интерполяция строк
+Интерполяция выражений
+Для вставки выражений в обычные строки вам пришлось бы использовать следующий синтаксис:
+-----------------------------------------------------------------------
+var a = 5;
+var b = 10;
+console.log('Fifteen is ' + (a + b) + ' and not ' + (2 * a + b) + '.');
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+let a = 5, b = 10;
+let c = `Fifteen is ${a + b} and not ${2 * a + b}.`;
+
+console.log(c); //=> Fifteen is 15 and not 20.
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+const person = {
+    name: "Haraka",
+    age: 29
+};
+const greeting = `Hello, my name is ${person.name}.\nI'am ${person.age} year old.`;
+
+console.log(greeting); //=> Hello, my name is Haraka.
+                       //   I'am 29 year old.
+-----------------------------------------------------------------------
+*/
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+
+function makeList(arr) {
+  const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
+  return resultDisplayArray;
+};
+
+const resultDisplayArray = makeList(result.failure);
+console.log(resultDisplayArray);
+
+//ex.018
 
 //ex.026
