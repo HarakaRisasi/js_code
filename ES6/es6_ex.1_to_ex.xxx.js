@@ -714,5 +714,39 @@ bicycle.setGear(3);
 console.log(bicycle.gear);
 
 //ex.20
-  
-//ex.026
+/*
+-UpperCamelCase should be used by convention for ES6 class names, as in SpaceShuttle used above.
+-The constructor method is a special method for creating and initializing an object created with a class. 
+
+«this» в методах
+Как правило, методу объекта необходим доступ к информации, которая хранится в объекте, 
+чтобы выполнить с ней какие-либо действия (в соответствии с назначением метода).
+Например, коду внутри user.sayHi() может понадобиться имя пользователя, которое хранится в объекте user.
+------------------------------------------
+let user = {
+  name: "Джон",
+  age: 30,
+
+  sayHi() {
+    // this - это "текущий объект"
+    alert(this.name);
+  }
+};
+user.sayHi(); //=> Джон
+------------------------------------------
+Здесь во время выполнения кода user.sayHi() значением this будет являться user (ссылка на объект user).
+
+------------------------------------------
+let SpaceShuttle = function(targetPlanet){
+    this.targetPlanet = targetPlanet;
+};
+let zeus = new SpaceShuttle('Jupiter'); //=> SpaceShuttle {targetPlanet: "Jupiter"}
+console.log(zeus);
+------------------------------------------
+*/
+
+/*
+this.name represents the instance variable while the name variable is a parameter that is in the scope of the function (constructor in this case).
+With this assignment, the value of the local variable is assigned to the instance variable.
+*/
+//ex.031
