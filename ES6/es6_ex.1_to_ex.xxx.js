@@ -733,14 +733,27 @@ With this assignment, the value of the local variable is assigned to the instanc
 The constructor method is a special method for creating and initializing an object created with a class. 
 There can only be one special method with the name "constructor" in a class. 
 A SyntaxError will be thrown if the class contains more than one occurrence of a constructor method.
-*/
+------------------------------------------
 class SpaceShuttle {
-  constructor(targetPlanet) {
-      this.targetPlanet = targetPlanet;
-      //this.targetPlanet - is a property of SpaceShuttle."SpaceShuttle.targetPlanet"
-  }
+    constructor(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+        //this.targetPlanet - is a property of SpaceShuttle."SpaceShuttle.targetPlanet"
+    }
 }
 
 const zeus = new SpaceShuttle('Jupiter');
 console.log(zeus);
+------------------------------------------
+*/
+class Vegetable {
+  constructor(name) {
+      this.name = name;
+  }
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); //=> 'carrot'
+
+//ex.21
+
 //ex.031
