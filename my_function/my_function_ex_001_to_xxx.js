@@ -32,3 +32,9 @@ For C++ it would depend on whether or not you're in a class.
 function sayHi(){
     alert (this.name);
 }
+
+forEach – для перебора массива.
+filter – для фильтрации массива.
+every/some – для проверки массива.
+map – для трансформации массива в массив.
+reduce/reduceRight – для прохода по массиву с вычислением значения.

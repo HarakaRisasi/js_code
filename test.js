@@ -1,16 +1,49 @@
-/*Use Multiple Conditional (Ternary) Operators
+/*
+Use getters and setters to Control Access to an Object
 
-function checkSign(a, b) {
-  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
-}
+You can obtain values from an object, and set a value of a property within an object.
 
-console.log(checkSign(10, 9)); //a is greater
-console.log(checkSign(10, 10)); //a and b are equal
-console.log(checkSign(10, 11)); //b is greater
+-Getter functions are meant to simply return (get) the value of an object's private variable to the user 
+without the user directly accessing the private variable.
+
+-Setter functions are meant to modify (set) the value of an object's private 
+variable based on the value passed into the setter function. 
+This change could involve calculations, or even overwriting the previous value completely.
 */
 
-function checkSign(num) {
-  return (num === 0) ? "zero" : (num > 0) ? "positive" : "negative";
+/*
+Use getters and setters to Control Access to an Object
+
+You can obtain values from an object, and set a value of a property within an object.
+
+-Getter functions are meant to simply return (get) the value of an object's private variable to the user 
+without the user directly accessing the private variable.
+
+-Setter functions are meant to modify (set) the value of an object's private 
+variable based on the value passed into the setter function. 
+This change could involve calculations, or even overwriting the previous value completely.
+*/
+
+/*
+Use getters and setters to Control Access to an Object
+
+You can obtain values from an object, and set a value of a property within an object.
+
+-Getter functions are meant to simply return (get) the value of an object's private variable to the user 
+without the user directly accessing the private variable.
+
+-Setter functions are meant to modify (set) the value of an object's private 
+variable based on the value passed into the setter function. 
+This change could involve calculations, or even overwriting the previous value completely.
+*/
+
+function centuryFromYear(year) {
+    if(year % 100 === 0){
+        return year / 100;
+    }
+    else if (year % 100 != 0){
+        return Math.trunc(year / 100 + 1);
+    }
 }
 
-console.log(checkSign(10));
+console.log(centuryFromYear(1988));
