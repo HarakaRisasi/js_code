@@ -73,6 +73,75 @@ const haraka = new Character("Haraka", 1000, 10000000);
 
 console.log(haraka.describe()); //=> Haraka, has 1000 health points, 10000000 as strength and 0 XP points
 console.log(aurora.describe()); //=> Aurora, has 300 health points, 500 as strength and 0 XP points
--------------------------------------------
 
+aurora.health -= 20;
+aurora.strength += 10;
+aurora.xp += 15;
+console.log(aurora.describe()); //=> Aurora, has 280 health points, 510 as strength and 15 XP points
+-------------------------------------------
+*/
+class Character {
+  constructor(name, health, strength) {
+      this.name = name;
+      this.health = health;
+      this.strength = strength;
+      this.xp = 0;
+  }
+
+  //Attack a target
+  attack(target) {
+      if (this.health > 0) {
+          const damage = this.strength;
+          console.log(`${this.name} attacks ${target.name}, and causes ${damage} damage points`);
+          target.health -= damage;
+          if (target.health > 0) {
+              console.log(`${target.name} has ${target.health} health points left`);
+          } else {
+              target.health = 0;
+              const bonusXP = 10;
+              console.log(`${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`);
+              this.xp += bonusXP;
+          }
+      } else {
+          console.log(`${this.name} can't attack (they've been eliminated)`);
+      }
+  }
+  describe() {
+      return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+  }
+}
+
+const aurora = new Character("Aurora", 150, 25);
+const glacius = new Character("Glacius", 130, 30);
+
+console.log("Welcome to the adventure! Here are our heroes:");
+console.log(aurora.describe());
+console.log(glacius.describe());
+
+const monster = new Character("Spike", 40, 20);
+console.log("A wild monster has appeared: it's named " + monster.name);
+
+monster.attack(aurora);
+monster.attack(glacius);
+aurora.attack(monster);
+glacius.attack(monster);
+
+console.log(aurora.describe());
+console.log(glacius.describe());
+
+/*
+Welcome to the adventure! Here are our heroes:
+Aurora has 150 health points, 25 as strength and 0 XP points
+Glacius has 130 health points, 30 as strength and 0 XP points
+A wild monster has appeared: it's named Spike
+Spike attacks Aurora, and causes 20 damage points
+Aurora has 130 health points left
+Spike attacks Glacius, and causes 20 damage points
+Glacius has 110 health points left
+Aurora attacks Spike, and causes 25 damage points
+Spike has 15 health points left
+Glacius attacks Spike, and causes 30 damage points
+Glacius eliminated Spike and wins 10 experience points
+Aurora has 130 health points, 25 as strength and 0 XP points
+Glacius has 110 health points, 30 as strength and 10 XP points
 */
