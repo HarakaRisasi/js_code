@@ -166,8 +166,13 @@ const myFunc = function() {
 }
 -------------------------------
 */
-const magic = () => new Date();
-console.log(magic);
+const magic_old = function() {
+  return new Date();
+};
+
+const magic_new = () => new Date();
+
+console.log(magic_new);
 
 //ex.007
 const myConcat = (arr1, arr2) => arr1.concat(arr2);
@@ -175,6 +180,47 @@ const myConcat = (arr1, arr2) => arr1.concat(arr2);
 console.log(myConcat([1, 2], [3, 4, 5]));
 
 //ex.008
+/*
+Write higher order arrow function
+Метод filter() создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
+
+Метод filter() вызывает переданную функцию callback один раз для каждого элемента, присутствующего в массиве, 
+и конструирует новый массив со всеми значениями, для которых функция callback вернула true или значение, 
+становящееся true при приведении в boolean. 
+Функция callback вызывается только для индексов массива, имеющих присвоенные значения; 
+она не вызывается для индексов, которые были удалены или которым значения никогда не присваивались. 
+Элементы массива, не прошедшие проверку функцией callback, просто пропускаются и не включаются в новый массив.
+----------------------------------------------------------------------------------
+const squareList = realNumberArray.filter(realNumberArray => realNumberArray > 3);
+console.log(squareList); //=> [4, 5.6, 3.14, 42, 6, 8.34]
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+    const Integers = arr.filter(num => Number.isInteger(num) && num > 0);
+    const squareIntegers = Integers.map(x => x * x);
+
+    return `After .filter method: arr = ${Integers}\nAfter .map method: arr = ${squareIntegers}`;
+};
+
+const squareIntegers = squareList(realNumberArray);
+
+console.log(squareIntegers); //=> After .filter method: arr = 4,42,6
+                             //=> After .map method: arr = 16,1764,36
+----------------------------------------------------------------------------------
+*/
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+    const squareIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+
+    return `After .filter method: arr = ${squareIntegers}`;
+};
+
+const squareIntegers = squareList(realNumberArray);
+
+console.log(squareIntegers); //=> After .filter method: arr = 16,1764,36
+
+//ex.009
 //Setting default arguments with arrow functions.
 const increment = (number = 1, value = 1) => number + value;
 //set default arguments if both or one of them not will be pass on a function
@@ -182,7 +228,7 @@ const increment = (number = 1, value = 1) => number + value;
 console.log(increment(5, 2)); // returns 7
 console.log(increment(5)); // returns 6
 
-//ex.009
+//ex.010
 /*
 const arg = (...arguments) => "You have " + arguments.length + " arguments.";
     ... — оператор расширения
@@ -197,7 +243,7 @@ console.log(arg("string", null, [1, 2, 3, 4], {}, 1231)); //return "You have 5 a
 const sum = (...args) => args.reduce((a, b) => a + b, 0);
 console.log(sum(1, 2, 3)); //return 6;
 
-//ex.010
+//ex.011
 /*
 "_es6"/ 
 --------------------------------
@@ -223,7 +269,7 @@ let arr2 = [...ARR1];
 
 console.log(arr2[2]); //return MAR;
 
-//ex.011
+//ex.012
 /*
 Use Destructuring Assignment
 Синтаксис деструктурирующего присваивания в выражениях 
@@ -289,7 +335,7 @@ console.log(yesterday) //return not defined
 console.log(today); //return 77
 console.log(tomorrow); //return 80
 
-//ex.012
+//ex.013
 /*
 Use Destructuring Assignment to Assign Variables from Objects
 --------------------------------------------
@@ -318,7 +364,7 @@ const {
 console.log(highToday); //return 77
 console.log(highTomorrow); //return 80
 
-//ex.013
+//ex.014
 /*
 Here's how to extract the values of object properties and assign them to variables with the same name:
 --------------------------------
@@ -380,7 +426,7 @@ const {
 console.log(lowToday);
 console.log(highToday);
 
-//ex.014
+//ex.015
 /*
 Use Destructuring Assignment to Assign Variables from Arrays
 ------------------------------------------
@@ -410,7 +456,7 @@ let a = 8,
 console.log(a);
 console.log(b);
 
-//ex.015
+//ex.016
 /*
 _Rest parameters
 
@@ -451,7 +497,7 @@ const arr = removeFirstTwo(source);
 console.log(arr); //=> [3, 4, 5, 6, 7, 8, 9, 10]
 console.log(source); //=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-//ex.016
+//ex.017
 /*
 Use Destructuring Assignment to Pass an Object as a Function's Parameters
 - In some cases, you can destructure the object in a function argument itself.
@@ -485,7 +531,7 @@ const half = ({
 console.log(stats);
 console.log(half(stats));
 
-//ex.017
+//ex.018
 /*
 Create Strings using Template Literals
 
@@ -551,7 +597,7 @@ function makeList(arr) {
 const resultDisplayArray = makeList(result.failure);
 console.log(resultDisplayArray);
 
-//ex.018
+//ex.019
 /*
 Write Concise Object Literal Declarations Using Object Property Shorthand
 -------------------------------------
@@ -644,7 +690,7 @@ const createPerson = (name, age, gender) => {
 };
 console.log(createPerson("Zodiac Hasbro", 56, "male")); //=>{name: "Zodiac Hasbro", age: 56, gender: "male"}
 
-//ex.019
+//ex.020
 /*
 Declarative Functions with ES6
 
@@ -713,7 +759,7 @@ const bicycle = {
 bicycle.setGear(3);
 console.log(bicycle.gear);
 
-//ex.20
+//ex.21
 /*
 -UpperCamelCase should be used by convention for ES6 class names, as in SpaceShuttle used above.
 -The constructor method is a special method for creating and initializing an object created with a class. 
@@ -754,7 +800,7 @@ class Vegetable {
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); //=> 'carrot'
 
-//ex.21
+//ex.22
 /*
 Use getters and setters to Control Access to an Object
 
@@ -780,7 +826,10 @@ class Book {
         this._author = updatedAuthor;
     }
 }
+
+Создание пустого объекта.Это создает объект внутри константы lol:
 const lol = new Book('anonymous');
+
 console.log(lol._author); //=> anonymous
 
 lol.writer = 'Haraka';
