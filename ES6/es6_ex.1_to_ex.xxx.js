@@ -790,6 +790,14 @@ class SpaceShuttle {
 const zeus = new SpaceShuttle('Jupiter');
 console.log(zeus);
 ------------------------------------------
+
+new Function() creates a function object and is invoked as follows:
+const func = new Function('«param_1»', ···, '«param_n»', '«func_body»');
+/or
+const func = function («param_1», ···, «param_n») {
+  «func_body»
+};
+
 */
 class Vegetable {
   constructor(name) {
@@ -812,6 +820,9 @@ without the user directly accessing the private variable.
 -Setter functions are meant to modify (set) the value of an object's private 
 variable based on the value passed into the setter function. 
 This change could involve calculations, or even overwriting the previous value completely.
+
+Getters() или аксессоры - это методы, обеспечивающие доступ к переменным экземпляра объекта. 
+Setters() или мутаторы - это методы, которые предоставляют вызывающему абоненту возможность обновлять значение конкретной переменной экземпляра.
 -----------------------------------------
 class Book {
     constructor(author){
@@ -835,6 +846,70 @@ console.log(lol._author); //=> anonymous
 lol.writer = 'Haraka';
 console.log(lol._author); //=> Haraka
 -----------------------------------------
+
+Обратим внимание, что для «геттера» getFullName нет соответствующего свойства объекта, он конструирует ответ «на лету». 
+Это нормально. 
+Одна из целей существования геттеров/сеттеров – как раз и есть изоляция внутренних свойств объекта, 
+чтобы можно было их как угодно менять, генерировать «на лету», а внешний интерфейс оставался тем же.
+-----------------------------------------
+const user = {
+    first: "Haraka",
+    next: "Military",
+
+    get fullname() {
+        return this.first + ' ' + this.next;
+    },
+
+    set fullname(value) {
+        const split = value.split(' ');
+        this.first = split[0];
+        this.next = split[1];
+    }
+};
+
+console.log(user.fullname); //=> Haraka Military
+-----------------------------------------
+-----------------------------------------
+class user {
+  constructor(firstName, surname) {
+      this.firstName = firstName;
+      this.surname = surname;
+  }
+  get _fullName() {
+      return `${this.firstName} ${this.surname}`;
+  };
+  set _fullName(val_fN) {
+      this.firstName = val_fN;
+  };
+};
+
+const name_resign = new user('Haraka', 'Risasi')
+console.log(name_resign._fullName); //=> Haraka Risasi
+
+name_resign._fullName = 'Andy';
+console.log(name_resign._fullName); //=> Andy Risasi
+-----------------------------------------
 */
+class Thermostat {
+  constructor(celsius) {
+      this.celsius = celsius;
+  }
+  get temperature() {
+      return 5 / 9 * (this.celsius - 32);
+  }
+  set temperature(temp_f) {
+      this.celsius = temp_f;
+  }
+};
+
+const thermos = new Thermostat(76);
+console.log(thermos.temperature); //=> 24.444444444444446
+
+let temp = thermos.temperature; //<= 24.444444444444446
+thermos.temperature = 26; //76 <=> 26
+temp = thermos.temperature; //<= -3.3333333333333335
+console.log(temp); //=> -3.3333333333333335
+
+//ex.23
 
 //ex.031
