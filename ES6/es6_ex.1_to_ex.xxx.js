@@ -759,7 +759,7 @@ const bicycle = {
 bicycle.setGear(3);
 console.log(bicycle.gear);
 
-//ex.21
+//ex.021
 /*
 -UpperCamelCase should be used by convention for ES6 class names, as in SpaceShuttle used above.
 -The constructor method is a special method for creating and initializing an object created with a class. 
@@ -808,7 +808,7 @@ class Vegetable {
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); //=> 'carrot'
 
-//ex.22
+//ex.022
 /*
 Use getters and setters to Control Access to an Object
 
@@ -910,6 +910,49 @@ thermos.temperature = 26; //76 <=> 26
 temp = thermos.temperature; //<= -3.3333333333333335
 console.log(temp); //=> -3.3333333333333335
 
-//ex.23
+//ex.023
+/*
+Create a Module Script
+In order to make JavaScript more modular, clean, and maintainable; 
+ES6 introduced a way to easily share code among JavaScript files. 
+This involves exporting parts of a file for use in one or more other files, 
+and importing the parts you need, where you need them. 
+In order to take advantage of this functionality, 
+you need to create a script in your HTML document with a type of module. 
+*/
+<script type="module" src="index.js"></script>
+
+//ex.024
+/*
+Use export to Share a Code Block
+------------------------------
+export const add = (x, y) => {
+  return x + y;
+}
+------------------------------
+------------------------------
+const add = (x, y) => {
+  return x + y;
+}
+
+export { add };
+------------------------------
+After you export a variable or function, you can import it in another file 
+to use without having to rewrite the code. You can export multiple things by 
+repeating the first example for each thing you want to export, or by placing 
+them all in the export statement of the second example like this:
+------------------------------
+export { add, subtract };
+------------------------------
+*/
+export const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+export const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+
+//ex.025
 
 //ex.031
