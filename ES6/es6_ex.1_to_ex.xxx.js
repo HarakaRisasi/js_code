@@ -920,19 +920,19 @@ and importing the parts you need, where you need them.
 In order to take advantage of this functionality, 
 you need to create a script in your HTML document with a type of module. 
 */
-<script type="module" src="index.js"></script>
+<script type = "module" src = "index.js" > </script>
 
 //ex.024
 /*
 Use export to Share a Code Block
 ------------------------------
 export const add = (x, y) => {
-  return x + y;
+return x + y;
 }
 ------------------------------
 ------------------------------
 const add = (x, y) => {
-  return x + y;
+return x + y;
 }
 
 export { add };
@@ -972,7 +972,10 @@ import "module-name";
 import("/module-name.js").then(module => {…}) // Динамический импорт
 import { add, subtract } from './math_functions.js';
 */
-import {uppercaseString, lowercaseString} from './string_functions.js'
+import {
+  uppercaseString,
+  lowercaseString
+} from './string_functions.js'
 
 uppercaseString("hello");
 lowercaseString("WORLD!");
@@ -998,4 +1001,26 @@ stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
 
 //ex.027
+/*
+There is another export syntax you need to know, known as export default. 
+Usually you will use this syntax if only one value is being exported from a file. 
+It is also used to create a fallback value for a file or module.
+Below are examples using export default:
+-----------------------------------
+export default function add(x, y) {
+return x + y;
+}
+-----------------------------------
+-----------------------------------
+export default function(x, y) {
+return x + y;
+}
+-----------------------------------
+*/
+export default function subtract(x, y) {
+  return x - y;
+}
+
+//ex.028
+
 //ex.031
