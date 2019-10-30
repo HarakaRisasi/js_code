@@ -954,5 +954,28 @@ export const lowercaseString = (string) => {
 }
 
 //ex.025
+/*
+Инструкция import используется для импорта ссылок на значения, 
+экспортированные из внешнего модуля. Для работы инструкции нужно прописать 
+у тэга script type="module". 
 
+Синтаксис
+import defaultExport from "module-name"; 
+import * as name from "module-name"; 
+import { export } from "module-name"; 
+import { export as alias } from "module-name"; 
+import { export1 , export2 } from "module-name"; 
+import { export1 , export2 as alias2 , […] } from "module-name"; 
+import defaultExport, { export [ , […] ] } from "module-name"; 
+import defaultExport, * as name from "module-name"; 
+import "module-name";
+import("/module-name.js").then(module => {…}) // Динамический импорт
+import { add, subtract } from './math_functions.js';
+*/
+
+import {uppercaseString, lowercaseString} from './string_functions.js'
+// add code above this line
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
 //ex.031
