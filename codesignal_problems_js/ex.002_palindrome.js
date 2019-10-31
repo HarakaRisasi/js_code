@@ -1,6 +1,8 @@
 /*
 Palindrome
 
+Регулярные выражения - это шаблоны, используемые для сопоставления комбинаций символов в строках.
+
 TL;DL(too long; didn't read)
 A palindrome is a word or sentence that’s spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
 
