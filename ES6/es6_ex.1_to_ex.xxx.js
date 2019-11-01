@@ -1086,3 +1086,39 @@ const makeServerRequest = new Promise((resolve, reject) => {
 });
 
 //ex.031
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+
+  if (responseFromServer) {
+      resolve("We got the data");
+  } else {
+      reject("Data not received");
+  }
+});
+
+/*
+Метод then() возвращает Promise (обещание). 
+Метод принимает два аргумента, колбэк-функции для случаев выполнения и отказа соответственно.
+*/
+makeServerRequest.then(result => {
+  console.log(result);
+}); //=> 'We got the data'
+
+//ex.32
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer = false;
+
+  if (responseFromServer) {
+      resolve("We got the data");
+  } else {
+      reject("Data not received");
+  }
+});
+/*
+Метод catch() возвращает Promise(обещание) и работает только в случае отклонения обещания.
+Метод catch может быть полезен для обработки ошибок в вашей структуре обещаний.
+*/
+makeServerRequest.catch(error => {
+  console.log(error);
+}); //=> 'Data not received'
