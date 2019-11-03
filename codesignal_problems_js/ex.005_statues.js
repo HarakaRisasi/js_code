@@ -24,4 +24,4 @@ function makeArrayConsecutive2(sequence) {
     return Math.max(...sequence) - Math.min(...sequence) - sequence.length + 1;
 };
 
-console.log(makeArrayConsecutive2([6, 2, 3, 8]));
+console.log(makeArrayConsecutive2([6, 2, 3, 8])); //=> 3
