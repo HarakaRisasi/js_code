@@ -1,13 +1,16 @@
-const arr = [2, 3, 6, 8, 12];
+const makeServerRequest = new Promise((resolve, reject) => {
+    let responseFromServer = false;
 
-let [min,max] = [Math.min(...arr), Math.max(...arr)];
-let out = Array.from(Array(max-min),(i)=>i+min).filter(i=>!arr.includes(i));
-
-console.log(out);
+    if (responseFromServer) {
+        resolve("We got the data");
+    } else {
+        reject("Data not received");
+    }
+});
 /*
-input:
-    [2, 3, 6, 8, 12]
-
-output:
-    [4, 5, 7, 9, 10, 11]
-*/
+ Метод catch() возвращает Promise(обещание) и работает только в случае отклонения обещания.
+ Метод catch может быть полезен для обработки ошибок в вашей структуре обещаний.
+ */
+makeServerRequest.catch(error => {
+    console.log(error);
+}); //=> 'Data not received'
