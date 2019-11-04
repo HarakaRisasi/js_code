@@ -1,9 +1,12 @@
 /*
 function allLongestStrings(inputArray) {
-    'use strict';
+    //find the longest list item
     let maxSize = Math.max(...inputArray.map(x => x.length));
+    //find elements in list "inputArray" that strict equal condition of problem
     return inputArray.filter(x => x.length === maxSize);
-}
+};
+//Return a new array containing the list matching the job condition 
+console.log(allLongestStrings(["aba", "aa", "ad", "vcd", "aba"]));
 */
 function allLongestStrings(inputArray) {
     let int_string = [];
