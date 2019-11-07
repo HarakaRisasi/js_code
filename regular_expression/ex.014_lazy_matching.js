@@ -1,50 +1,63 @@
 /*
 Lazy Matching
 
-In regular expressions, a greedy match finds the longest possible 
-part of a string that fits the regex pattern and returns it as a match. 
-The alternative is called a lazy match, which finds the smallest 
-possible part of the string that satisfies the regex pattern.
-------------------------------------------
-let one = "titanic";
-let regEx = /t[a-z]*i/;
-console.log(one.match(regEx)); //=> titani
-------------------------------------------
 Use the backslash to escape any special character and interpret it literally; 
 for example:
-
 \\ (escapes the backslash)
 \[ (escapes the bracket)
 \{ (escapes the curly brace)
 \. (escapes the dot)
 
-- A string enclosed in brackets [ ] matches any single character from the string.
 
-- The dot (.) -In regex, the dot corresponds to any character except a newline character.
-    .art == dart, cart, tart
+Character classes
+- ., matches any character except line breaks. Equivalent to [^\n\r].
+- \d, matches any digit character (0-9). Equivalent to [0-9].
+- \s, matches any whitespace character (spaces, tabs, line breaks).
+- \w, matches any word character (alphanumeric & underscore). 
+  Only matches low-ascii characters (no accented or non-roman characters). 
+  Equivalent to [A-Za-z0-9_]
+- [ABC], matches any character in the set.
+- [^ABC], matches any character is not in the set.
+- [A-Z], matches a character having a character code between the two specified characters inclusive.
 
-- Question mark - (?) - The question mark indicates zero or one occurrences of the 
-  preceding element. 
-  For example, colou?r matches both "color" and "colour".  
-  Этот метасимвол позволяет сопоставить либо ноль, либо один из предшествующих 
-  символов или групп. Например, шаблон "ab?c" будет соответствовать 
-  либо строкам 'abc', либо 'ac', потому что b считается необязательным.
-  
-  a[n]? h  == a herb || an herb - т.е. в слове необязательно присутствие [n]
-
-- Asterisk (*) matches a sequence of zero or more occurrences of the regular expression
-  Следует отметить, что регулярные выражения не являются символами подстановки. 
-  Регулярное выражение «c * t» не означает «совпадение» с «cat», «cot» и т. Д. 
-  В этом случае это означает «совпадение с нулем или более символов« c », 
-  за которыми следует символ t», 
-  поэтому оно будет соответствовать значению «t». ',' ct ',' cccct 'и т. д.
+Quantifiers & Alternation
+- +, matches 1 or more of the preceding token.
+- *, matches 0 or more of the preceding token.
+- ?, matches 0 or 1 of the preceding token, effectively making it optional.
+- +?, *? and ??, are equal to the preceding quantifiers, 
+  but make them lazy causing it to match as few characters as possible. 
+  By default, quantifiers are greedy, and will match as many characters as possible.
+- |, acts like a boolean OR. Matches the expression before or after the |. 
+  It can operate within a group, or on a whole expression. 
+  The patterns will be tested in order.  
 
   [^a].* - любое кол-во символов кроме "a"
+-----------------------------------------------------
+let text = "Haraka";
+-----------------------------------------------------
+let regEx = /[a]*_/ig;
+//=> ["", "a", "", "a", "", "a", ""]
+-----------------------------------------------------
+let regEx = /[a].*?/ig;
+//=> ["a", "a", "a"]
+-----------------------------------------------------
+let regEx = /[^a].*?/ig;
+//=> ["H", "r", "k"]
+-----------------------------------------------------
+-----------------------------------------------------
+let regEx = /[^a]*_/ig;
+//=> ["H", "", "r", "", "k", "", ""]
+-----------------------------------------------------
+-----------------------------------------------------
+let regEx = /[^a]./ig;
+//=> ["Ha", "ra", "ka"]
+-----------------------------------------------------
 */
 let text = "<h1>Winter is coming</h1>";
 //To remind you, the .* mean 'zero or more (*) of any character (.)'.
-let regEx = /<h1.*?>/;
-//let regEx = /<[h1.]*?>/;
+let regEx = /<h.*?>/;
+//Соответствие 
+
 //let regEx = /<[h1]*?>/;
 //let regEx = /<h1>?/;
 
