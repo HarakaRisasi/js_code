@@ -7,6 +7,11 @@ sumOfCubes(n) = 36.
 
 Because 13 + 23 + 33 = 1 + 8 + 27 = 36.
 */
+/*
+function sumOfCubes(n) {
+    return Array.from(Array(n+1).keys()).map(n => Math.pow(n,3)).reduce((a, b) => a + b);
+}
+*/
 function sumOfCubes(n) {
     let x = []; //Making_an_array;
     //Filling an array with a sequence of numbers
