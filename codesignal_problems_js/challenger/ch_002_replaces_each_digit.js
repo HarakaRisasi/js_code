@@ -4,6 +4,9 @@ in the given string with a '#' character.
 
 input = "There are 12 points"
 output = "There are ## points"
+---------------------------------------------------
+replaceAllDigitsRegExp = s => s.replace(/\d/g, "#")
+---------------------------------------------------
 */
 function replaceAllDigitsRegExp(input) {
     let regEx = /\d/g;
