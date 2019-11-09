@@ -2,6 +2,9 @@
 
 For inputArray = [19, 32, 11, 23], 
 the output should be arrayMinimumIndex(inputArray) = 2.
+--------------------------------------------------
+arrayMinimumIndex = a => a.indexOf(Math.min(...a))1
+--------------------------------------------------
 */
 function arrayMinimumIndex(inputArray) {
     let x = Math.min(...inputArray);
