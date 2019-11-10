@@ -6,11 +6,14 @@ For n = 3, the output should be
 sumOfCubes(n) = 36.
 
 Because 13 + 23 + 33 = 1 + 8 + 27 = 36.
-*/
-/*
+-------------------------------------
 function sumOfCubes(n) {
     return Array.from(Array(n+1).keys()).map(n => Math.pow(n,3)).reduce((a, b) => a + b);
 }
+-------------------------------------
+-------------------------------------
+sumOfCubes = n => n * n * ++n * n / 4
+-------------------------------------
 */
 function sumOfCubes(n) {
     let x = []; //Making_an_array;
