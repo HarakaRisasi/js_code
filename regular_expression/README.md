@@ -94,14 +94,12 @@
 
 * <[^<>]+> соответствует любому символу, кроме < или >, один или более раз встречающемуся между < и >
 ```
-<console.log(/\$(.+)\s?/.exec('This costs $100 and it is less than $200')[1]);
-//100 and it is less than $200>
+<console.log(/\$(.+)\s?/.exec('This costs $100 and it is less than $200')[1]); //100 and it is less than $200>
 ```
 Почему? 
 Потому что регулярное выражение после знака $ совпадает с любым символом .+ и не останавливается пока не достигнет конца строки. Затем он останавливается,потому что \s? делает конечное пространство необязательным.
 ```
-<console.log(/\$(.+?)\s/.exec('This costs $100 and it is less than $200')[1]);>
-//100>
+<console.log(/\$(.+?)\s/.exec('This costs $100 and it is less than $200')[1]);> //100>
 ```
 
 
@@ -112,26 +110,26 @@
 * \B совпадает если набор символов не находится в начале или конце слова
 Пример:
 ```
-'I saw a bear'.match(/\bbear/)    //Array ["bear"]
+'I saw a bear'.match(/\bbear/) //Array ["bear"]
 ```
 ```
-'I saw a beard'.match(/\bbear/)   //Array ["bear"]
+'I saw a beard'.match(/\bbear/) //Array ["bear"]
 ```
 ```
 'I saw a beard'.match(/\bbear\b/) //null
 ```
 ```
-'cool_bear'.match(/\bbear\b/)     //null
+'cool_bear'.match(/\bbear\b/) //null
 ```
 
 Замена с помощью регулярных выражений
 -
 У объекта String в JavaScript есть метод replace(), который можно использовать без регулярных выражений для одной замены в строке:
 ```
-> "Hello world!".replace('world', 'dog') //Hello dog!
+"Hello world!".replace('world', 'dog') //Hello dog!
 ```
 ```
-> "My dog is a good dog!".replace('dog', 'cat') //My cat is a good dog!
+"My dog is a good dog!".replace('dog', 'cat') //My cat is a good dog!
 ```
 ```
 "Hello world!".replace(/world/, 'dog') //Hello dog!
@@ -142,8 +140,7 @@
 "My dog is a good dog!".replace(/dog/g, 'cat') //My cat is a good cat!
 ```
 ```
-"Hello, world!".replace(/(\w+), (\w+)!/, '$2: $1!!!')
-// "world: Hello!!!"
+"Hello, world!".replace(/(\w+), (\w+)!/, '$2: $1!!!') //"world: Hello!!!"
 ````
 ```
 "Hello, world!".replace(/(\w+), (\w+)!/, (matchedString, first, second) => {
