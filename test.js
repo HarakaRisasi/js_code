@@ -1,16 +1,15 @@
-const makeServerRequest = new Promise((resolve, reject) => {
-    let responseFromServer = false;
+function rounders(n) {
+    
+    let x = ((n + '').split('')).map(Number)
+    return x.forEach(num => {num -1
+    });
+    
 
-    if (responseFromServer) {
-        resolve("We got the data");
-    } else {
-        reject("Data not received");
-    }
-});
-/*
- Метод catch() возвращает Promise(обещание) и работает только в случае отклонения обещания.
- Метод catch может быть полезен для обработки ошибок в вашей структуре обещаний.
- */
-makeServerRequest.catch(error => {
-    console.log(error);
-}); //=> 'Data not received'
+}
+console.log(rounders(15)); //=> 20
+console.log(rounders(1234)); //=> 1000
+console.log(rounders(1445)); //=> 2000
+console.log(rounders(14)); //=> 10
+console.log(rounders(10)); //=> 10
+console.log(rounders(7001)); //=> 7000
+console.log(rounders(99)); //=> 100
