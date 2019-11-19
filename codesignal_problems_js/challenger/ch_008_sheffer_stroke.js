@@ -6,6 +6,16 @@ It produces true, if - and only if - at least one of the operands is false.
 0 1 = true
 1 0 = true
 1 1 = false
+-----------------------------------
+shefferStroke = (a, b) => a + b < 2
+//=> false (1 + 1 = 2 >> 2 !< 2)
+-----------------------------------
+-----------------------------------
+shefferStroke = (a, b) => !a || !b
+-----------------------------------
+-----------------------------------
+shefferStroke = (a, b) => !(a && b)
+-----------------------------------
 */
 shefferStroke = (a, b) => a && b === true ? false : true;
 
